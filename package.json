@@ -1,0 +1,51 @@
+{
+  "name": "nodejs-api-starter",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "NODE_ENV=development nodemon --exec babel-node -- src/index.js --inspect",
+    "clean": "rm -rf dist && mkdir dist",
+    "build-server": "babel src --out-dir dist",
+    "build": "npm run clean && npm run build-server",
+    "serve": "node dist/index.js",
+    "lint": "eslint src config",
+    "lint:fix": "npm run lint -- --fix",
+    "test": "jest src",
+    "test:watch": "jest src --watch",
+    "test:coverage": "jest --coverage",
+    "test:coverage:open": "opn ./coverage/lcov-report/index.html",
+    "validate": "npm run lint; npm run test && npm outdated --depth 0"
+  },
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "chalk": "^2.3.0",
+    "cookie-parser": "~1.4.3",
+    "cors": "^2.8.4",
+    "debug": "~2.6.9",
+    "dotenv": "^4.0.0",
+    "express": "~4.15.5",
+    "jest": "^21.2.1",
+    "morgan": "~1.9.0",
+    "serve-favicon": "~2.4.5",
+    "twig": "^0.10.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.3",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.13.1",
+    "eslint-config-esnext": "^2.0.0",
+    "eslint-config-recommended": "^2.0.0",
+    "eslint-config-standard": "^11.0.0-beta.0",
+    "eslint-plugin-babel": "^4.1.2",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-node": "^5.2.1",
+    "eslint-plugin-promise": "^3.6.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "nodemon": "^1.12.6",
+    "opn-cli": "^3.1.0"
+  }
+}
