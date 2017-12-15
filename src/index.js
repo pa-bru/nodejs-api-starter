@@ -15,7 +15,7 @@ dotenv.load({ path: `./config/.env.${process.env.NODE_ENV || 'development'}` })
 // configure express app
 const app = express()
 app.set('port', process.env.PORT || 5000)
-app.set('views', path.join(__dirname, '..', 'views'))
+app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'twig')
 
 // Middlewares
